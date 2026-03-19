@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Care n Cure Learning Platform</title>
+  <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar">
+      <div>
+        <h1>Care n Cure</h1>
+        <p>Performance-driven internal learning platform</p>
+      </div>
+      <nav>
+        <button class="nav-btn active" data-view="login">Login</button>
+        <button class="nav-btn" data-view="dashboard">Dashboard</button>
+        <button class="nav-btn" data-view="courses">Courses</button>
+        <button class="nav-btn" data-view="quiz">Quiz</button>
+      </nav>
+      <div class="demo-box">
+        <h3>Demo Credentials</h3>
+        <p>Admin: admin@carencure.com / Admin@123</p>
+        <p>Manager: manager@carencure.com / Manager@123</p>
+        <p>Employee: sara@carencure.com / Employee@123</p>
+      </div>
+    </aside>
+    <main class="content">
+      <section id="login" class="view active">
+        <div class="hero-card">
+          <span class="pill">Internal Learning MVP</span>
+          <h2>Upskill teams across Pharmacy, FMCG, Sales, and Operations.</h2>
+          <p>Track learning performance, analytics, and completion in one secure platform.</p>
+        </div>
+        <form id="loginForm" class="card form-grid">
+          <h3>Secure Login</h3>
+          <input name="email" type="email" placeholder="Email address" required />
+          <input name="password" type="password" placeholder="Password" required />
+          <button type="submit">Sign in</button>
+          <p id="loginMessage"></p>
+        </form>
+      </section>
+
+      <section id="dashboard" class="view">
+        <div class="section-head">
+          <div>
+            <h2>Dashboard</h2>
+            <p id="userMeta">Sign in to view progress.</p>
+          </div>
+          <button id="refreshDashboard">Refresh</button>
+        </div>
+        <div id="metricCards" class="cards"></div>
+        <div class="grid two-col">
+          <div class="card"><h3>Notifications</h3><div id="notifications"></div></div>
+          <div class="card"><h3>Leaderboard</h3><div id="leaderboard"></div></div>
+        </div>
+        <div class="card">
+          <h3>Department Completion Chart</h3>
+          <div id="completionChart"></div>
+        </div>
+      </section>
+
+      <section id="courses" class="view">
+        <div class="section-head">
+          <div>
+            <h2>Courses</h2>
+            <p>Browse department-based learning paths and completion status.</p>
+          </div>
+          <button id="loadCourses">Load Courses</button>
+        </div>
+        <div id="courseList" class="cards"></div>
+        <div id="courseDetails" class="card hidden"></div>
+      </section>
+
+      <section id="quiz" class="view">
+        <div class="section-head">
+          <div>
+            <h2>Module Quiz</h2>
+            <p>Randomized MCQ assessment with auto-scoring and pass/fail feedback.</p>
+          </div>
+        </div>
+        <div class="card form-grid">
+          <input id="moduleIdInput" type="number" placeholder="Enter module ID from course details" />
+          <button id="loadQuiz">Load Quiz</button>
+        </div>
+        <form id="quizForm" class="card hidden"></form>
+        <div id="quizResult" class="card hidden"></div>
+      </section>
+    </main>
+  </div>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
